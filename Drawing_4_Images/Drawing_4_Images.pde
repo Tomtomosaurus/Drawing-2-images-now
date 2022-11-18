@@ -29,12 +29,12 @@ void setup()
   portraitPicWidth3 = 1000;
   portraitPicHeight3 = 1500;
   //
-  landscapePic1 = loadImage("../Images/Landscape/cool-geometric-triangular-figure-neon-laser-light-great-background_181624-11412.jpeg/");
-  landscapePic2 = loadImage("../Images/Landscape/crazy-cool-backgrounds-115537227324vlprio9sk.jpeg/");
-  landscapePic3 = loadImage("../Images/Landscape/pexels-anni-roenkae-2156881.jpeg/");
-  portraitPic1 = loadImage("../Images/Portrait/Cool-Android-Wallpaper-1024x2048.jpeg/");
-  portraitPic2 = loadImage("../Images/Portrait/Cool-Wallpapers.jpeg/");
-  portraitPic3 = loadImage("../Images/Portrait/photo-1549317336-206569e8475c.jpeg/");
+  landscapePic1 = loadImage("../Images/Landscape/cool-geometric-triangular-figure-neon-laser-light-great-background_181624-11412.jpg/");
+  landscapePic2 = loadImage("../Images/Landscape/crazy-cool-backgrounds-115537227324vlprio9sk.jpg/");
+  landscapePic3 = loadImage("../Images/Landscape/pexels-anni-roenkae-2156881.jpg/");
+  portraitPic1 = loadImage("../Images/Portrait/Cool-Android-Wallpaper-1024x2048.jpg/");
+  portraitPic2 = loadImage("../Images/Portrait/Cool-Wallpapers.jpg/");
+  portraitPic3 = loadImage("../Images/Portrait/photo-1549317336-206569e8475c.jpg/");
 }
 void draw()
 {
