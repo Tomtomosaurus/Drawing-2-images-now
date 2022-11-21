@@ -4,6 +4,7 @@ int portraitPicWidth1, portraitPicHeight1, portraitpicWidth2, portraitPicHeight2
 PImage landscapePic1, landscapePic2, landscapePic3, portraitPic1, portraitPic2, portraitPic3;
 void setup()
 {
+  size (500, 500);
   noWidth = 0;
   noHeight = 0;
   quarterWidth = width/4;
@@ -15,8 +16,8 @@ void setup()
   appWidth = width;
   appHeight = height;
   //
-  landscapePicWidth1 = 2000;
-  landscapePicHeight1 = 1125;
+  landscapePicWidth1 = 626;
+  landscapePicHeight1 = 352;
   landscapePicWidth2 = 850;
   landscapePicHeight2 = 532;
   landscapePicWidth3 = 3997;
@@ -29,7 +30,7 @@ void setup()
   portraitPicWidth3 = 1000;
   portraitPicHeight3 = 1500;
   //
-  landscapePic1 = loadImage("../Images/Landscape/cool-geometric-triangular-figure-neon-laser-light-great-background_181624-11412.jpg");
+  landscapePic1 = loadImage("../Images/Landscape/cosmic-background-with-colorful-red-blue-laser-lights-perfect-digital-wallpaper_181624-32704.jpg");
   landscapePic2 = loadImage("../Images/Landscape/crazy-cool-backgrounds-115537227324vlprio9sk.jpg");
   landscapePic3 = loadImage("../Images/Landscape/pexels-anni-roenkae-2156881.jpg");
   portraitPic1 = loadImage("../Images/Portrait/Cool-Android-Wallpaper-1024x2048.jpg");
@@ -38,8 +39,6 @@ void setup()
 }
 void draw()
 {
-
-  size (500, 500);
   rect (noWidth, noHeight, quarterWidth, quarterHeight);
   rect (threeQuarterWidth, noHeight, quarterWidth, quarterHeight);
   rect (noWidth, threeQuarterHeight, quarterWidth, quarterHeight);
