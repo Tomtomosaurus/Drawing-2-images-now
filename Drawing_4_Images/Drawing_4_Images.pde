@@ -1,9 +1,13 @@
 int noWidth, noHeight, quarterWidth, quarterHeight, halfWidth, halfHeight, threeQuarterWidth, threeQuarterHeight, appWidth, appHeight;
 int landscapePicWidth1, landscapePicHeight1, landscapePicWidth2, landscapePicHeight2, landscapePicWidth3, landscapePicHeight3;
 int portraitPicWidth1, portraitPicHeight1, portraitpicWidth2, portraitPicHeight2, portraitPicWidth3, portraitPicHeight3;
-float smallerDimension1, largerDimension1;
-float smallerDimension2, largerDimension2;
-float smallerDimension3, largerDimension3;
+float landscapeSmallerDimension1, landscapeLargerDimension1;
+float landscapeSmallerDimension2, landscapeLargerDimension2;
+float landscapeSmallerDimension3, landscapeLargerDimension3;
+float portraitSmallerDimension1, portraitDimension1;
+float portraitSmallerDimension2, portraitDimension2;
+float portraitSmallerDimension3, portraitDimension3;
+float landscapePicWidthAdjusted1, landscapePicHeightRatio1, landscapePicWidthRatio1, landscapePicHeightAdjusted1;
 PImage landscapePic1, landscapePic2, landscapePic3, portraitPic1, portraitPic2, portraitPic3;
 void setup()
 {
@@ -41,16 +45,32 @@ void setup()
   portraitPic3 = loadImage("../Images/Portrait/photo-1549317336-206569e8475c.jpg");
   //
   if ( landscapePicWidth1 >= landscapePicHeight1 ) { //True if Landscape or Square
-    largerDimension1 = landscapePicWidth1;
-    smallerDimension1 = landscapePicHeight1;
+    landscapeLargerDimension1 = landscapePicWidth1;
+    landscapeSmallerDimension1 = landscapePicHeight1;
+    //
+    landscapePicWidthAdjusted1 = appWidth;
+    landscapePicHeightRatio1 = landscapeSmallerDimension1 / landscapeLargerDimension1;
+    landscapePicHeightAdjusted1 = landscapePicWidthAdjusted1 * landscapePicHeightRatio1;
+  } else { //False if Portrait
+    landscapeLargerDimension1 = landscapePicHeight1;
+    landscapeSmallerDimension1 = landscapePicWidth1;
+    //
+    //Students to create
+    landscapePicHeightAdjusted1 = appHeight; //stretch or reduce
+    landscapePicWidthRatio1 = landscapeSmallerDimension1 / landscapeLargerDimension1;
+    landscapePicWidthAdjusted1 = landscapePicHeightAdjusted1 * landscapePicWidthRatio1;
+    if ( landscapePicWidthAdjusted1 > landscapePicWidth1 ) {
+      println("STOP: image is too big for rectangle layout");
+      exit(); //stop further use of the APP
+    }
   }
 }
-void draw()
-{
-  image (landscapePic1, noWidth, noHeight, appWidth, appHeight);
-  image (landscapePic2, noWidth, noHeight, quarterWidth, quarterHeight);
-  image (landscapePic3, threeQuarterWidth, noHeight, quarterWidth, quarterHeight);
-  image (portraitPic1, noWidth, threeQuarterHeight, quarterWidth, quarterHeight);
-  image (portraitPic2, threeQuarterWidth, threeQuarterHeight, quarterWidth, quarterHeight);
-  image (portraitPic3, quarterWidth, quarterHeight, halfWidth, halfHeight);
-}
+  void draw()
+  {
+    image (landscapePic1, noWidth, noHeight, landscapePicWidthAdjusted1, landscapePicHeightAdjusted1);
+    image (landscapePic2, noWidth, noHeight, quarterWidth, quarterHeight);
+    image (landscapePic3, threeQuarterWidth, noHeight, quarterWidth, quarterHeight);
+    image (portraitPic1, noWidth, threeQuarterHeight, quarterWidth, quarterHeight);
+    image (portraitPic2, threeQuarterWidth, threeQuarterHeight, quarterWidth, quarterHeight);
+    image (portraitPic3, quarterWidth, quarterHeight, halfWidth, halfHeight);
+  }
